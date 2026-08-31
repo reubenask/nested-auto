@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nested Auto Limited — exact-fit premium vehicle parts." />
+  <title>Nested Auto Limited — Exact-fit vehicle parts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <button class="brand" data-home aria-label="Nested Auto home"><img src="assets/nested-auto-limited-logo.svg" alt="Nested Auto Limited"></button>
+    <nav class="nav" aria-label="Main navigation">
+      <button class="active" data-home>Shop parts</button><button>Brands</button><button id="garageBtn">Garage</button><button>About us</button>
+    </nav>
+    <div class="header-actions">
+      <label class="search"><span>⌕</span><input aria-label="Search" placeholder="Search part, OE number, or system…"></label>
+      <button class="icon-btn" aria-label="Saved items">♡</button>
+      <button class="icon-btn bag" aria-label="Shopping bag">▢<span id="cartCount">2</span></button>
+    </div>
+  </header>
+
+  <main id="explorerView">
+    <section class="hero">
+      <aside class="vehicle-identity">
+        <p class="eyebrow">Parts for your vehicle</p>
+        <h1>Focus on<br><em>what matters.</em></h1>
+        <div class="vehicle-name" id="vehicleName">Toyota Camry</div>
+        <div class="vehicle-spec" id="vehicleSpec">XV70 · 2021 · 2.5L</div>
+        <div class="fit-pill"><span>✓</span> Exact-fit parts only</div>
+        <button class="change-btn" id="changeVehicle"><span>◇</span> Change vehicle</button>
+      </aside>
+
+      <section class="vehicle-stage" id="vehicleStage" tabindex="0" aria-label="Vehicle part explorer. Use arrow keys or swipe to change category.">
+        <div class="vehicle-art">
+          <img id="vehicleImage" class="vehicle-image" src="assets/vehicles/toyota/camry/xv70/brakes.png" alt="Toyota Camry XV70 technical illustration with highlighted brakes">
+          <svg viewBox="0 0 980 500" role="img" aria-labelledby="carTitle">
+            <title id="carTitle">Technical side illustration of the selected vehicle</title>
+            <g class="blueprint legacy-drawing">
+              <path d="M79 344c21-76 62-119 137-150l174-70 94-61c27-18 61-27 102-27h133c43 0 80 14 113 43l74 66 24 57 8 114-72 29c-17-56-52-82-101-76-50 6-79 42-84 101l-382 47c-5-63-39-94-91-87-51 7-81 44-85 107l-70-18Z"/>
+              <path d="m400 120 99-64c21-13 46-20 77-20h41l-7 114Zm237-84h76c31 0 58 11 82 32l77 69-241 12ZM394 138l477 20M610 150l-9 184m40-185 24 168M103 320l119 18m615-113 93-22"/>
+              <path d="M121 437c4-63 34-100 86-107s86 24 91 87m383-47c5-59 34-95 84-101 49-6 84 20 101 76"/>
+              <ellipse cx="210" cy="417" rx="74" ry="84" transform="rotate(-8 210 417)"/><ellipse cx="210" cy="417" rx="38" ry="45" transform="rotate(-8 210 417)"/><ellipse cx="767" cy="354" rx="56" ry="70" transform="rotate(-6 767 354)"/><ellipse cx="767" cy="354" rx="29" ry="37" transform="rotate(-6 767 354)"/>
+              <path d="M83 330 58 350m810-191 50 17M460 179h43m188-22h39M526 139l-18-35m172 37 18-38M82 361l200 33 325-44 251-49M89 384l181 41M307 296 99 313m229-42-187 22m213-47-168 22m535 20 115-28"/>
+              <path d="M84 347c46 15 90 22 139 27m564-87c49-2 91-13 137-38" stroke-dasharray="7 9"/>
+              <path d="M256 236 99 289l9 46 154 20 61-45Zm-123 85 48 7m13-28 49 8m-107 35 110 15M376 188l-61 30 19 51 180-45-8-48Z"/>
+            </g>
+            <g id="partOverlay" class="part-overlay"></g>
+          </svg>
+          <div class="scan-label">ACTIVE FITMENT · <span id="scanLabel">FRONT AXLE</span></div>
+        </div>
+        <div class="pagination" id="pagination" aria-hidden="true"></div>
+      </section>
+
+      <aside class="detail-panel" id="detailPanel" aria-live="polite"></aside>
+    </section>
+
+    <section class="category-wrap" aria-label="Part categories">
+      <button class="arrow" id="prevCategory" aria-label="Previous category">←</button>
+      <div class="categories" id="categories" role="tablist"></div>
+      <button class="arrow" id="nextCategory" aria-label="Next category">→</button>
+    </section>
+
+    <section class="benefits">
+      <div><span>◎</span><p><strong>Exact fit guarantee</strong>Parts matched to your vehicle.</p></div>
+      <div><span>◇</span><p><strong>Premium quality</strong>OE-standard, trusted parts.</p></div>
+      <div><span>↗</span><p><strong>Fast delivery</strong>Get back on the road quickly.</p></div>
+      <div><span>◌</span><p><strong>Expert support</strong>Specialists ready to help.</p></div>
+    </section>
+  </main>
+
+  <main id="inventoryView" class="inventory-view hidden"></main>
+
+  <dialog id="vehicleDialog" class="selector-dialog">
+    <div class="dialog-head"><div><p class="eyebrow">Vehicle fitment</p><h2 id="selectorTitle">Choose your brand</h2></div><button id="closeDialog" aria-label="Close">×</button></div>
+    <div class="progress" id="selectorProgress"></div>
+    <div class="selector-options" id="selectorOptions"></div>
+    <button class="back-step hidden" id="backStep">← Back</button>
+  </dialog>
+
+  <dialog id="garageDialog" class="selector-dialog">
+    <div class="dialog-head"><div><p class="eyebrow">Saved vehicles</p><h2>My garage</h2></div><button data-close-garage aria-label="Close">×</button></div>
+    <div id="garageList" class="garage-list"></div>
+    <button class="primary wide" id="addGarageVehicle">+ Add another vehicle</button>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
