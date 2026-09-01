@@ -14,7 +14,7 @@
   <header class="header">
     <button class="brand" data-home aria-label="Nested Auto home"><img src="assets/nested-auto-limited-logo.svg" alt="Nested Auto Limited"></button>
     <nav class="nav" aria-label="Main navigation">
-      <button class="active" data-home>Shop parts</button><button id="brandsBtn">Brands</button><button id="garageBtn">Garage</button><button>About us</button>
+      <button class="active" data-home>Shop parts</button><button id="brandsBtn">Brands</button><button id="garageBtn">Garage</button><button id="sourceVehicleBtn">Buy a vehicle</button><button>About us</button>
     </nav>
     <div class="header-actions">
       <label class="currency-picker" title="Choose display currency"><span id="currencyFlag">◎</span><select id="currencySelect" aria-label="Display currency"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="CZK">CZK</option><option value="GHS">GHS</option><option value="XOF">XOF</option><option value="NGN">NGN</option><option value="ZAR">ZAR</option><option value="KES">KES</option><option value="CNY">CNY</option><option value="JPY">JPY</option><option value="CAD">CAD</option><option value="AUD">AUD</option></select></label>
@@ -71,6 +71,11 @@
       <div><span>↗</span><p><strong>Fast delivery</strong>Get back on the road quickly.</p></div>
       <div><span>◌</span><p><strong>Expert support</strong>Specialists ready to help.</p></div>
     </section>
+    <section class="vehicle-sourcing" aria-labelledby="sourcingTitle">
+      <div class="sourcing-copy"><p class="eyebrow">Cars, vans and buses on request</p><h2 id="sourcingTitle">Tell us the vehicle you need. We’ll source it.</h2><p>From family cars and commercial vans to pickups and buses such as the Toyota Coaster, Nested Auto can find vehicles to match your requirements and destination.</p></div>
+      <div class="sourcing-types" aria-label="Vehicle types"><span>Cars</span><span>SUVs</span><span>Pickups</span><span>Vans</span><span>Buses</span></div>
+      <button class="primary sourcing-action" id="sourceVehicleCta">Request a vehicle →</button>
+    </section>
     <p class="rate-note" id="rateNote">Prices shown in USD. Currency conversion is indicative. <a href="https://exchangerate.dev" target="_blank" rel="noopener">Live rates</a> with <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">daily global fallback</a>.</p>
   </main>
 
@@ -88,6 +93,21 @@
     <div id="garageList" class="garage-list"></div>
     <div id="brandGarage" class="brand-garage"></div>
     <button class="primary wide" id="addGarageVehicle">+ Add another vehicle</button>
+  </dialog>
+
+  <dialog id="sourceVehicleDialog" class="selector-dialog sourcing-dialog">
+    <div class="dialog-head"><div><p class="eyebrow">Vehicle sourcing</p><h2>Request a car or bus</h2></div><button id="closeSourceVehicle" aria-label="Close">×</button></div>
+    <p class="sourcing-intro">Share what you need and our team will help source a suitable vehicle, including commercial buses such as the Toyota Coaster.</p>
+    <form id="sourceVehicleForm" class="sourcing-form">
+      <label>Vehicle type<select name="type" required><option value="">Choose type</option><option>Car</option><option>SUV</option><option>Pickup</option><option>Van</option><option>Bus / Coaster</option><option>Truck</option></select></label>
+      <label>Brand<input name="brand" placeholder="e.g. Toyota" required></label>
+      <label>Model<input name="model" placeholder="e.g. Coaster" required></label>
+      <label>Preferred year<input name="year" inputmode="numeric" placeholder="e.g. 2022 or newer"></label>
+      <label>Budget<input name="budget" placeholder="Amount and currency"></label>
+      <label>Delivery country<input name="destination" placeholder="e.g. Ghana" required></label>
+      <label class="full">Additional requirements<textarea name="notes" rows="3" placeholder="Seats, fuel type, transmission, condition, colour…"></textarea></label>
+      <button class="primary full" type="submit">Send vehicle request →</button>
+    </form>
   </dialog>
 
   <div class="drawer-backdrop hidden" id="drawerBackdrop"></div>
