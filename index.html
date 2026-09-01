@@ -17,6 +17,7 @@
       <button class="active" data-home>Shop parts</button><button id="brandsBtn">Brands</button><button id="garageBtn">Garage</button><button>About us</button>
     </nav>
     <div class="header-actions">
+      <label class="currency-picker" title="Choose display currency"><span id="currencyFlag">◎</span><select id="currencySelect" aria-label="Display currency"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="CZK">CZK</option><option value="GHS">GHS</option><option value="XOF">XOF</option><option value="NGN">NGN</option><option value="ZAR">ZAR</option><option value="KES">KES</option><option value="CNY">CNY</option><option value="JPY">JPY</option><option value="CAD">CAD</option><option value="AUD">AUD</option></select></label>
       <label class="search"><span>⌕</span><input aria-label="Search" placeholder="Search part, OE number, or system…"></label>
       <button class="icon-btn" aria-label="Saved items">♡</button>
       <button class="cart-button" id="cartButton" aria-label="Open shopping cart"><span class="cart-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3 5h4l2.8 14.2h14.8l3-9.7H9.1"/><circle cx="12" cy="25" r="2.2"/><circle cx="23" cy="25" r="2.2"/></svg></span><span class="cart-label">Cart</span><span id="cartCount">0</span></button>
@@ -70,6 +71,7 @@
       <div><span>↗</span><p><strong>Fast delivery</strong>Get back on the road quickly.</p></div>
       <div><span>◌</span><p><strong>Expert support</strong>Specialists ready to help.</p></div>
     </section>
+    <p class="rate-note" id="rateNote">Prices shown in USD. Currency conversion is indicative. <a href="https://exchangerate.dev" target="_blank" rel="noopener">Live rates</a> with <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">daily global fallback</a>.</p>
   </main>
 
   <main id="inventoryView" class="inventory-view hidden"></main>
