@@ -12,6 +12,7 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
 .vehicle-image{display:block;width:100%;height:auto;transition:opacity .35s ease,transform .35s ease;filter:drop-shadow(0 18px 22px rgba(18,101,243,.045))}.vehicle-image.is-changing{opacity:.15;transform:translateY(2px)}.vehicle-art>svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.legacy-drawing,.part-overlay{display:none}
+.vehicle-art.sheet-mode{aspect-ratio:3.4/1;overflow:hidden;background:#fff}.vehicle-art.sheet-mode .vehicle-image{position:absolute;inset:0 auto auto 0;width:auto!important;max-width:none;height:500%;margin:0!important;transform:translate(var(--sheet-x,0),var(--sheet-y,0));filter:none}.vehicle-art.sheet-mode .vehicle-image.is-changing{opacity:.15;transform:translate(var(--sheet-x,0),var(--sheet-y,0))}.vehicle-art.sheet-mode>svg{display:none}
 
 /* Reference-matched desktop composition */
 @media(min-width:1051px){
