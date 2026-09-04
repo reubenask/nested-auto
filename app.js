@@ -45,7 +45,12 @@ const vehicles=[
   {brand:'Maxus',model:'V80',generation:'Current',year:2024,engine:'2.5L diesel · 18 seats'},
   {brand:'Nissan',model:'X-Trail',generation:'T33',year:2023,engine:'2.5L'},
   {brand:'Isuzu',model:'D-Max',generation:'RG',year:2023,engine:'3.0L diesel'},
-  {brand:'Hyundai',model:'Tucson',generation:'NX4',year:2023,engine:'2.0L'}
+  {brand:'Hyundai',model:'Tucson',generation:'NX4',year:2023,engine:'2.0L'},
+  {brand:'Toyota',model:'Highlander',generation:'XU70',year:2023,engine:'2.4T'},
+  {brand:'BMW',model:'X3',generation:'G01',year:2023,engine:'2.0L'},
+  {brand:'Honda',model:'Civic',generation:'FE',year:2023,engine:'1.5T'},
+  {brand:'Kia',model:'Sportage',generation:'NQ5',year:2023,engine:'2.5L'},
+  {brand:'Mercedes-Benz',model:'C-Class',generation:'W206',year:2023,engine:'1.5T'}
 ];
 const sharedVisualStates={brakes:'brakes.webp',suspension:'suspension.webp',engine:'engine.webp',exhaust:'exhaust.webp',mirrors:'mirrors.webp',headlights:'headlights.webp',wheels:'wheels.webp',taillights:'taillights.webp',windshield:'windshield.webp',wipers:'wipers.webp','brake-pads':'brakes.webp','brake-rotors':'brakes.webp','fog-lights':'headlights.webp',battery:'engine.webp',radiator:'engine.webp','air-filter':'engine.webp','spark-plugs':'engine.webp','ac-compressor':'engine.webp','water-pump':'engine.webp',alternator:'engine.webp','control-arms':'suspension.webp','ball-joints':'suspension.webp','wheel-bearings':'wheels.webp','timing-belt':'engine.webp','rearview-mirror':'mirrors.webp','door-handles':'mirrors.webp',tires:'wheels.webp',rims:'wheels.webp',seats:'base.webp'};
 const vehicleAssetPacks={
@@ -60,12 +65,17 @@ const vehicleAssetPacks={
   'Maxus|V80|Current':{root:'assets/vehicles/maxus/v80/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
   'Nissan|X-Trail|T33':{root:'assets/vehicles/nissan/x-trail/t33',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
   'Isuzu|D-Max|RG':{root:'assets/vehicles/isuzu/d-max/rg',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
-  'Hyundai|Tucson|NX4':{root:'assets/vehicles/hyundai/tucson/nx4',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))}
+  'Hyundai|Tucson|NX4':{root:'assets/vehicles/hyundai/tucson/nx4',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Toyota|Highlander|XU70':{root:'assets/vehicles/toyota/highlander/xu70',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'BMW|X3|G01':{root:'assets/vehicles/bmw/x3/g01',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Honda|Civic|FE':{root:'assets/vehicles/honda/civic/fe',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Kia|Sportage|NQ5':{root:'assets/vehicles/kia/sportage/nq5',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Mercedes-Benz|C-Class|W206':{root:'assets/vehicles/mercedes-benz/c-class/w206',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))}
 };
 const selectorData={brandGroups:{'China':['Avatr','BAIC','BYD','Changan','Chery','Deepal','Dongfeng','FAW','Foton','GAC','Geely','GWM','Haval','JAC','Jaecoo','Jetour','Leapmotor','Maxus','MG','Neta','Omoda','Riddara','Sinotruk','Wuling','Xpeng','Zeekr'],'Japan':['Honda','Hino','Isuzu','Mitsubishi','Nissan','Suzuki','Toyota'],'Germany':['BMW','MAN','Mercedes-Benz','Volkswagen'],'United Kingdom':['Jaguar','Land Rover','Range Rover'],'United States':['Ford'],'South Korea':['Hyundai','Kia'],'India':['Ashok Leyland','BharatBenz','Mahindra','Maruti Suzuki','Tata']},models:{Toyota:['Camry','Corolla','RAV4','Highlander'],BMW:['330i','320i','X3','X5'],BYD:['Atto 3'],Jetour:['G700','T1','T1 i-DM','T2','T2 i-DM','Dashing','X70','X70 Plus','X90 Plus']},generations:{Camry:[['XV50','2011–2017'],['XV70','2017–2024'],['XV80','2024–present']],Corolla:[['E170','2013–2019'],['E210','2018–present']],"330i":[['F30','2012–2019'],['G20','2019–present']],'Atto 3':[['Current','2022–present']],G700:[['Current','2025–present']],T1:[['Current','2024–present']],'T1 i-DM':[['Current','2025–present']],T2:[['Current','2023–present']],'T2 i-DM':[['Current','2024–present']],Dashing:[['Current','2022–present']],X70:[['Current','2018–present']],'X70 Plus':[['Current','2020–present']],'X90 Plus':[['Current','2021–present']]},years:[2026,2025,2024,2023,2022,2021,2020],engines:['2.5L','2.0L','1.8L','1.6T','1.5T','2.0T','Plug-in hybrid','2.0L B48','60.5 kWh EV']};
 Object.assign(selectorData.models,{Ford:['Ranger'],Nissan:['X-Trail'],Isuzu:['D-Max'],Hyundai:['Tucson']});
-Object.assign(selectorData.generations,{Ranger:[['T6.2','2022–present']], 'X-Trail':[['T33','2021–present']], 'D-Max':[['RG','2019–present']], Tucson:[['NX4','2020–present']], RAV4:[['XA50','2018–present']]});
-selectorData.engines.push('2.0L diesel','3.0L diesel','4.0L diesel');
+Object.assign(selectorData.generations,{Ranger:[['T6.2','2022–present']], 'X-Trail':[['T33','2021–present']], 'D-Max':[['RG','2019–present']], Tucson:[['NX4','2020–present']], RAV4:[['XA50','2018–present']], Highlander:[['XU70','2020–present']], X3:[['G01','2017–present']], Civic:[['FE','2022–present']], Sportage:[['NQ5','2021–present']], 'C-Class':[['W206','2021–present']]});
+selectorData.engines.push('2.0L diesel','3.0L diesel','4.0L diesel','2.4T');
 const brandShowcase=[['Avatr','11','avatr'],['BAIC','X55','baic'],['BYD','Atto 3','byd'],['Changan','UNI-V','changan'],['Chery','Tiggo 7','chery'],['Deepal','S7','deepal'],['Dongfeng','Box','dongfeng'],['FAW','Bestune B70','faw'],['Foton','Tunland','foton'],['GAC','GS3','gac'],['Geely','Emgrand','geely'],['GWM','Poer','gwm'],['Haval','Jolion','haval'],['JAC','T9','jac'],['Jaecoo','J7','jaecoo'],['Jetour','T2','jetour'],['Leapmotor','C10','leapmotor'],['Maxus','V80','maxus'],['MG','MG 5','mg'],['Neta','V','neta'],['Omoda','C5','omoda'],['Riddara','RD6','riddara'],['Sinotruk','HOWO Light','sinotruk'],['Wuling','Hongguang','wuling'],['Xpeng','G6','xpeng'],['Zeekr','001','zeekr'],['Honda','Civic','honda'],['Hino','300','hino'],['Isuzu','D-Max','isuzu'],['Mitsubishi','Outlander','mitsubishi'],['Nissan','X-Trail','nissan'],['Suzuki','Swift','suzuki'],['Toyota','Corolla','toyota'],['BMW','330i','bmw'],['MAN','TGL','man'],['Mercedes-Benz','C-Class','mercedes-benz'],['Volkswagen','Tiguan','volkswagen'],['Jaguar','XE','jaguar'],['Land Rover','Defender','land-rover'],['Range Rover','Sport','range-rover'],['Ford','Ranger','ford'],['Hyundai','Tucson','hyundai'],['Kia','Sportage','kia'],['Ashok Leyland','Dost','ashok-leyland'],['BharatBenz','1217C','bharatbenz'],['Mahindra','Scorpio-N','mahindra'],['Maruti Suzuki','Swift','maruti-suzuki'],['Tata','Nexon','tata']].map(([brand,model,slug])=>({brand,model,slug,generation:brand==='Toyota'?'E210':brand==='BMW'?'G20':'Current',year:brand==='Toyota'?2022:brand==='BMW'?2023:2024,engine:brand==='BYD'?'60.5 kWh EV':brand==='Hino'?'4.0L diesel':'Representative model',image:brand==='Toyota'?'assets/vehicles/toyota/corolla/e210/base.webp':brand==='BMW'?'assets/vehicles/bmw/330i/g20/base.webp':brand==='BYD'?'assets/vehicles/byd/atto-3/current/base.webp':`assets/vehicles/brands/${slug}.webp`,sheet:['Toyota','BMW','BYD','Hino'].includes(brand)?null:`assets/vehicles/brand-parts/${slug}.jpg`}));
 const maxusShowcase=brandShowcase.find(v=>v.brand==='Maxus');
 if(maxusShowcase){maxusShowcase.image='assets/vehicles/maxus/v80/current/base.webp';maxusShowcase.engine='2.5L diesel · 18 seats';maxusShowcase.sheet=null}
@@ -75,7 +85,10 @@ const dedicatedShowcase={
   Isuzu:{model:'D-Max',generation:'RG',year:2023,engine:'3.0L diesel',image:'assets/vehicles/isuzu/d-max/rg/base.webp'},
   Ford:{model:'Ranger',generation:'T6.2',year:2023,engine:'2.0L diesel',image:'assets/vehicles/ford/ranger/t6-2/base.webp'},
   Hyundai:{model:'Tucson',generation:'NX4',year:2023,engine:'2.0L',image:'assets/vehicles/hyundai/tucson/nx4/base.webp'},
-  Hino:{model:'300',generation:'Current',year:2024,engine:'4.0L diesel',image:'assets/vehicles/hino/300/current/base.webp'}
+  Hino:{model:'300',generation:'Current',year:2024,engine:'4.0L diesel',image:'assets/vehicles/hino/300/current/base.webp'},
+  Honda:{model:'Civic',generation:'FE',year:2023,engine:'1.5T',image:'assets/vehicles/honda/civic/fe/base.webp'},
+  Kia:{model:'Sportage',generation:'NQ5',year:2023,engine:'2.5L',image:'assets/vehicles/kia/sportage/nq5/base.webp'},
+  'Mercedes-Benz':{model:'C-Class',generation:'W206',year:2023,engine:'1.5T',image:'assets/vehicles/mercedes-benz/c-class/w206/base.webp'}
 };
 Object.entries(dedicatedShowcase).forEach(([brand,config])=>{const vehicle=brandShowcase.find(v=>v.brand===brand&&v.model===config.model);if(vehicle){Object.assign(vehicle,config,{sheet:null})}});
 brandShowcase.forEach(v=>{selectorData.models[v.brand]??=[v.model];selectorData.generations[v.model]??=[['Current',`${v.year} representative`]]});
