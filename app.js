@@ -102,7 +102,14 @@ const vehicles=[
   {brand:'Toyota',model:'Camry',generation:'XV80',year:2025,engine:'2.5L hybrid'},
   {brand:'Toyota',model:'Corolla',generation:'E170',year:2016,engine:'1.8L'},
   {brand:'BMW',model:'330i',generation:'F30',year:2018,engine:'2.0T'},
-  {brand:'BMW',model:'320i',generation:'Current',year:2024,engine:'2.0T'}
+  {brand:'BMW',model:'320i',generation:'Current',year:2024,engine:'2.0T'},
+  {brand:'Jetour',model:'T1',generation:'Current',year:2024,engine:'1.5T'},
+  {brand:'Jetour',model:'T1 i-DM',generation:'Current',year:2025,engine:'Plug-in hybrid'},
+  {brand:'Jetour',model:'T2 i-DM',generation:'Current',year:2024,engine:'Plug-in hybrid'},
+  {brand:'Jetour',model:'Dashing',generation:'Current',year:2024,engine:'1.5T'},
+  {brand:'Jetour',model:'X70',generation:'Current',year:2024,engine:'1.5T'},
+  {brand:'Jetour',model:'X70 Plus',generation:'Current',year:2024,engine:'1.6T'},
+  {brand:'Jetour',model:'X90 Plus',generation:'Current',year:2024,engine:'2.0T'}
 ];
 const sharedVisualStates={brakes:'brakes.webp',suspension:'suspension.webp',engine:'engine.webp',exhaust:'exhaust.webp',mirrors:'mirrors.webp',headlights:'headlights.webp',wheels:'wheels.webp',taillights:'taillights.webp',windshield:'windshield.webp',wipers:'wipers.webp','brake-pads':'brakes.webp','brake-rotors':'brakes.webp','fog-lights':'headlights.webp',battery:'engine.webp',radiator:'engine.webp','air-filter':'engine.webp','spark-plugs':'engine.webp','ac-compressor':'engine.webp','water-pump':'engine.webp',alternator:'engine.webp','control-arms':'suspension.webp','ball-joints':'suspension.webp','wheel-bearings':'wheels.webp','timing-belt':'engine.webp','rearview-mirror':'mirrors.webp','door-handles':'mirrors.webp',tires:'wheels.webp',rims:'wheels.webp',seats:'base.webp'};
 const vehicleAssetPacks={
@@ -114,6 +121,13 @@ const vehicleAssetPacks={
   'BMW|330i|G20':{root:'assets/vehicles/bmw/330i/g20',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
   'BMW|330i|F30':{root:'assets/vehicles/bmw/330i/f30',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
   'BMW|320i|Current':{root:'assets/vehicles/bmw/320i/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Jetour|T1|Current':{root:'assets/vehicles/jetour/t1/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Jetour|T1 i-DM|Current':{root:'assets/vehicles/jetour/t1-i-dm/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Jetour|T2 i-DM|Current':{root:'assets/vehicles/jetour/t2-i-dm/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Jetour|Dashing|Current':{root:'assets/vehicles/jetour/dashing/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Jetour|X70|Current':{root:'assets/vehicles/jetour/x70/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Jetour|X70 Plus|Current':{root:'assets/vehicles/jetour/x70-plus/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Jetour|X90 Plus|Current':{root:'assets/vehicles/jetour/x90-plus/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
   'BYD|Atto 3|Current':{root:'assets/vehicles/byd/atto-3/current',states:Object.fromEntries(categories.filter(c=>!['exhaust','air-filter','spark-plugs','alternator','timing-belt'].includes(c.id)).map(c=>[c.id,`${c.id}.webp`])),unavailable:['exhaust','air-filter','spark-plugs','alternator','timing-belt']},
   'Jetour|T2|Current':{root:'assets/vehicles/jetour/t2/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
   'Toyota|RAV4|XA50':{root:'assets/vehicles/toyota/rav4/xa50',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
@@ -243,6 +257,13 @@ exactVehicleEngines['Toyota|Camry|XV80']=['2.5L hybrid'];
 exactVehicleEngines['Toyota|Corolla|E170']=['1.8L'];
 exactVehicleEngines['BMW|330i|F30']=['2.0T'];
 exactVehicleEngines['BMW|320i|Current']=['2.0T'];
+exactVehicleEngines['Jetour|T1|Current']=['1.5T'];
+exactVehicleEngines['Jetour|T1 i-DM|Current']=['Plug-in hybrid'];
+exactVehicleEngines['Jetour|T2 i-DM|Current']=['Plug-in hybrid'];
+exactVehicleEngines['Jetour|Dashing|Current']=['1.5T'];
+exactVehicleEngines['Jetour|X70|Current']=['1.5T'];
+exactVehicleEngines['Jetour|X70 Plus|Current']=['1.6T'];
+exactVehicleEngines['Jetour|X90 Plus|Current']=['2.0T'];
 brandShowcase.forEach(v=>{selectorData.models[v.brand]??=[v.model];selectorData.generations[v.model]??=[['Current',`${v.year} representative`]]});
 selectorData.engines.push('2.5L diesel · 18 seats');
 selectorData.brands=Object.values(selectorData.brandGroups).flat();
