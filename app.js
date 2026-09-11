@@ -97,13 +97,23 @@ const vehicles=[
   {brand:'Maruti Suzuki',model:'Swift',generation:'Current',year:2024,engine:'1.2L'},
   {brand:'Tata',model:'Nexon',generation:'Current',year:2024,engine:'1.2T'},
   {brand:'Jetour',model:'G700',generation:'Current',year:2026,engine:'2.0T plug-in hybrid'},
-  {brand:'Toyota',model:'Land Cruiser',generation:'J300',year:2024,engine:'3.3L diesel'}
+  {brand:'Toyota',model:'Land Cruiser',generation:'J300',year:2024,engine:'3.3L diesel'},
+  {brand:'Toyota',model:'Camry',generation:'XV50',year:2015,engine:'2.5L'},
+  {brand:'Toyota',model:'Camry',generation:'XV80',year:2025,engine:'2.5L hybrid'},
+  {brand:'Toyota',model:'Corolla',generation:'E170',year:2016,engine:'1.8L'},
+  {brand:'BMW',model:'330i',generation:'F30',year:2018,engine:'2.0T'},
+  {brand:'BMW',model:'320i',generation:'Current',year:2024,engine:'2.0T'}
 ];
 const sharedVisualStates={brakes:'brakes.webp',suspension:'suspension.webp',engine:'engine.webp',exhaust:'exhaust.webp',mirrors:'mirrors.webp',headlights:'headlights.webp',wheels:'wheels.webp',taillights:'taillights.webp',windshield:'windshield.webp',wipers:'wipers.webp','brake-pads':'brakes.webp','brake-rotors':'brakes.webp','fog-lights':'headlights.webp',battery:'engine.webp',radiator:'engine.webp','air-filter':'engine.webp','spark-plugs':'engine.webp','ac-compressor':'engine.webp','water-pump':'engine.webp',alternator:'engine.webp','control-arms':'suspension.webp','ball-joints':'suspension.webp','wheel-bearings':'wheels.webp','timing-belt':'engine.webp','rearview-mirror':'mirrors.webp','door-handles':'mirrors.webp',tires:'wheels.webp',rims:'wheels.webp',seats:'base.webp'};
 const vehicleAssetPacks={
   'Toyota|Camry|XV70':{root:'assets/vehicles/toyota/camry/xv70',states:{brakes:'brakes.webp',suspension:'suspension.webp',engine:'engine.webp',exhaust:'exhaust.webp',mirrors:'mirrors.webp',headlights:'headlights.webp',wheels:'wheels.webp',taillights:'taillights.webp',windshield:'windshield.webp',wipers:'wipers.webp','brake-pads':'brake-pads.webp','brake-rotors':'brake-rotors.webp','fog-lights':'fog-lights.webp',battery:'battery.webp',radiator:'radiator.webp','air-filter':'air-filter.webp','spark-plugs':'spark-plugs.webp','ac-compressor':'ac-compressor.webp','water-pump':'water-pump.webp',alternator:'alternator.webp','control-arms':'control-arms.webp','ball-joints':'ball-joints.webp','wheel-bearings':'wheel-bearings.webp','timing-belt':'timing-belt.webp','rearview-mirror':'rearview-mirror.webp','door-handles':'door-handles.webp',tires:'tires.webp',rims:'rims.webp',seats:'seats.webp'}},
+  'Toyota|Camry|XV50':{root:'assets/vehicles/toyota/camry/xv50',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Toyota|Camry|XV80':{root:'assets/vehicles/toyota/camry/xv80',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
   'Toyota|Corolla|E210':{root:'assets/vehicles/toyota/corolla/e210',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'Toyota|Corolla|E170':{root:'assets/vehicles/toyota/corolla/e170',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
   'BMW|330i|G20':{root:'assets/vehicles/bmw/330i/g20',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'BMW|330i|F30':{root:'assets/vehicles/bmw/330i/f30',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
+  'BMW|320i|Current':{root:'assets/vehicles/bmw/320i/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
   'BYD|Atto 3|Current':{root:'assets/vehicles/byd/atto-3/current',states:Object.fromEntries(categories.filter(c=>!['exhaust','air-filter','spark-plugs','alternator','timing-belt'].includes(c.id)).map(c=>[c.id,`${c.id}.webp`])),unavailable:['exhaust','air-filter','spark-plugs','alternator','timing-belt']},
   'Jetour|T2|Current':{root:'assets/vehicles/jetour/t2/current',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
   'Toyota|RAV4|XA50':{root:'assets/vehicles/toyota/rav4/xa50',states:Object.fromEntries(categories.map(c=>[c.id,`${c.id}.webp`]))},
@@ -173,7 +183,7 @@ Object.assign(selectorData.models,{Leapmotor:['C10'],Neta:['V'],Omoda:['C5'],Rid
 selectorData.models.Toyota.push('Land Cruiser');
 Object.assign(selectorData.generations,{C10:[['Current','2023–present']],V:[['Current','2020–present']],C5:[['Current','2022–present']],RD6:[['Current','2022–present']],Hongguang:[['Current','2020–present']],G6:[['Current','2023–present']],'001':[['Current','2021–present']],XE:[['Current','2019–present']],Defender:[['Current','2020–present']],Sport:[['Current','2022–present']]});
 Object.assign(selectorData.generations,{Dost:[['Current','2020–present']],'1217C':[['Current','2020–present']],'Scorpio-N':[['Current','2022–present']],Nexon:[['Current','2023–present']],'Land Cruiser':[['J300','2021–present']]});
-const exactVehicleGenerations={'Maruti Suzuki|Swift':[['Current','2024–present']]};
+const exactVehicleGenerations={'Maruti Suzuki|Swift':[['Current','2024–present']],'BMW|320i':[['Current','2022–present']]};
 selectorData.engines.push('2.0L diesel','2.5L diesel','3.0L diesel','4.0L diesel','4.0L diesel · 18 seats','4.6L diesel','1.2L','2.4T','2.8L diesel','3.0L','90 kWh EV','66.8 kWh EV','42.3 kWh EV','EV','1.5L diesel','3.9L diesel','2.2L diesel','1.2T','2.0T plug-in hybrid','3.3L diesel');
 const brandShowcase=[['Avatr','11','avatr'],['BAIC','X55','baic'],['BYD','Atto 3','byd'],['Changan','UNI-V','changan'],['Chery','Tiggo 7','chery'],['Deepal','S7','deepal'],['Dongfeng','Box','dongfeng'],['FAW','Bestune B70','faw'],['Foton','Tunland','foton'],['GAC','GS3','gac'],['Geely','Emgrand','geely'],['GWM','Poer','gwm'],['Haval','Jolion','haval'],['JAC','T9','jac'],['Jaecoo','J7','jaecoo'],['Jetour','T2','jetour'],['Leapmotor','C10','leapmotor'],['Maxus','V80','maxus'],['MG','MG 5','mg'],['Neta','V','neta'],['Omoda','C5','omoda'],['Riddara','RD6','riddara'],['Sinotruk','HOWO Light','sinotruk'],['Wuling','Hongguang','wuling'],['Xpeng','G6','xpeng'],['Zeekr','001','zeekr'],['Honda','Civic','honda'],['Hino','300','hino'],['Isuzu','D-Max','isuzu'],['Mitsubishi','Outlander','mitsubishi'],['Nissan','X-Trail','nissan'],['Suzuki','Swift','suzuki'],['Toyota','Corolla','toyota'],['BMW','330i','bmw'],['MAN','TGL','man'],['Mercedes-Benz','C-Class','mercedes-benz'],['Volkswagen','Tiguan','volkswagen'],['Jaguar','XE','jaguar'],['Land Rover','Defender','land-rover'],['Range Rover','Sport','range-rover'],['Ford','Ranger','ford'],['Hyundai','Tucson','hyundai'],['Kia','Sportage','kia'],['Ashok Leyland','Dost','ashok-leyland'],['BharatBenz','1217C','bharatbenz'],['Mahindra','Scorpio-N','mahindra'],['Maruti Suzuki','Swift','maruti-suzuki'],['Tata','Nexon','tata']].map(([brand,model,slug])=>({brand,model,slug,generation:brand==='Toyota'?'E210':brand==='BMW'?'G20':'Current',year:brand==='Toyota'?2022:brand==='BMW'?2023:2024,engine:brand==='BYD'?'60.5 kWh EV':brand==='Hino'?'4.0L diesel':'Representative model',image:brand==='Toyota'?'assets/vehicles/toyota/corolla/e210/base.webp':brand==='BMW'?'assets/vehicles/bmw/330i/g20/base.webp':brand==='BYD'?'assets/vehicles/byd/atto-3/current/base.webp':`assets/vehicles/brands/${slug}.webp`,sheet:['Toyota','BMW','BYD','Hino'].includes(brand)?null:`assets/vehicles/brand-parts/${slug}.jpg`}));
 const maxusShowcase=brandShowcase.find(v=>v.brand==='Maxus');
@@ -228,6 +238,11 @@ Object.entries(dedicatedShowcase).forEach(([brand,config])=>{const vehicle=brand
 const exactVehicleEngines=Object.fromEntries(Object.entries(dedicatedShowcase).map(([brand,config])=>[`${brand}|${config.model}|${config.generation}`,[config.engine]]));
 exactVehicleEngines['Jetour|G700|Current']=['2.0T plug-in hybrid'];
 exactVehicleEngines['Toyota|Land Cruiser|J300']=['3.3L diesel'];
+exactVehicleEngines['Toyota|Camry|XV50']=['2.5L'];
+exactVehicleEngines['Toyota|Camry|XV80']=['2.5L hybrid'];
+exactVehicleEngines['Toyota|Corolla|E170']=['1.8L'];
+exactVehicleEngines['BMW|330i|F30']=['2.0T'];
+exactVehicleEngines['BMW|320i|Current']=['2.0T'];
 brandShowcase.forEach(v=>{selectorData.models[v.brand]??=[v.model];selectorData.generations[v.model]??=[['Current',`${v.year} representative`]]});
 selectorData.engines.push('2.5L diesel · 18 seats');
 selectorData.brands=Object.values(selectorData.brandGroups).flat();
