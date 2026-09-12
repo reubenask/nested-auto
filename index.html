@@ -8,13 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260914-1" />
 </head>
 <body>
   <header class="header">
     <button class="brand" data-home aria-label="Nested Auto home"><img src="assets/nested-auto-limited-logo.svg" alt="Nested Auto Limited"></button>
-    <nav class="nav" aria-label="Main navigation">
-      <button class="active" data-home>Shop parts</button><button id="brandsBtn">Brands</button><button id="garageBtn">Garage</button><button id="sourceVehicleBtn">Buy a vehicle</button><button>About us</button>
+    <button class="mobile-menu-button" id="mobileMenuButton" type="button" aria-label="Open main menu" aria-controls="mainNav" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <button class="active" data-home>Shop parts</button><button id="brandsBtn">Brands</button><button id="garageBtn">Garage</button><button id="sourceVehicleBtn">Buy a vehicle</button><button id="aboutBtn">About us</button>
     </nav>
     <div class="header-actions">
       <label class="currency-picker" title="Choose display currency"><span id="currencyFlag">◎</span><select id="currencySelect" aria-label="Display currency"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="CZK">CZK</option><option value="GHS">GHS</option><option value="XOF">XOF</option><option value="NGN">NGN</option><option value="ZAR">ZAR</option><option value="KES">KES</option><option value="CNY">CNY</option><option value="JPY">JPY</option><option value="CAD">CAD</option><option value="AUD">AUD</option></select></label>
@@ -23,6 +24,7 @@
       <button class="cart-button" id="cartButton" aria-label="Open shopping cart"><span class="cart-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3 5h4l2.8 14.2h14.8l3-9.7H9.1"/><circle cx="12" cy="25" r="2.2"/><circle cx="23" cy="25" r="2.2"/></svg></span><span class="cart-label">Cart</span><span id="cartCount">0</span></button>
     </div>
   </header>
+  <button class="mobile-nav-backdrop" id="mobileNavBackdrop" type="button" aria-label="Close main menu" tabindex="-1"></button>
 
   <main id="explorerView">
     <section class="hero">
@@ -110,6 +112,16 @@
     </form>
   </dialog>
 
+  <dialog id="aboutDialog" class="selector-dialog about-dialog">
+    <div class="dialog-head"><div><p class="eyebrow">Nested Auto Limited</p><h2>Parts that fit. Vehicles sourced.</h2></div><button id="closeAbout" aria-label="Close">×</button></div>
+    <div class="about-content">
+      <p>Nested Auto helps drivers, workshops and fleet buyers find exact-fit vehicle parts across a growing 48-brand catalog.</p>
+      <div><strong>Exact-fit parts</strong><span>Choose your brand, model, generation, year and verified engine before shopping.</span></div>
+      <div><strong>Vehicle sourcing</strong><span>Request cars, SUVs, pickups, vans, buses and commercial vehicles for your destination.</span></div>
+      <div><strong>Buyer support</strong><span>Use the Nested Auto assistant for fitment questions, product guidance and order support.</span></div>
+    </div>
+  </dialog>
+
   <div class="drawer-backdrop hidden" id="drawerBackdrop"></div>
   <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping cart">
     <div class="drawer-head"><div><p class="eyebrow">Your order</p><h2>Shopping cart</h2></div><button id="closeCart" aria-label="Close cart">×</button></div>
@@ -122,9 +134,10 @@
     <header class="chat-head"><div class="assistant-mark">N</div><div><strong>Nested Auto Assistant</strong><small>Parts & fitment support</small></div><button id="closeChat" aria-label="Close chat">×</button></header>
     <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
     <div class="chat-suggestions" id="chatSuggestions"></div>
+    <a class="whatsapp-option" id="whatsappOption" href="https://wa.me/8618215107127" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> Continue on WhatsApp</a>
     <form class="chat-form" id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Ask about a part or vehicle…" aria-label="Message"><button aria-label="Send message">↑</button></form>
     <p class="chat-note">Always confirm fitment before ordering.</p>
   </section>
-  <script src="app.js?v=20260912-1"></script>
+  <script src="app.js?v=20260914-1"></script>
 </body>
 </html>
