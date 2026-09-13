@@ -93,8 +93,9 @@ html,body{max-width:100%;overflow-x:hidden}.hero>*,.detail-panel>*,.price-row>*,
 .contact-drag-handle{width:28px;height:43px;display:grid;place-items:center;border-radius:28px 7px 7px 28px;color:#fff;font-size:17px;cursor:grab;touch-action:none;user-select:none}.contact-drag-handle:active,.contact-launcher.is-dragging .contact-drag-handle{cursor:grabbing}.contact-drag-handle:focus-visible{outline:2px solid #fff;outline-offset:-3px}.contact-launcher.is-dragging{transition:none;box-shadow:0 20px 46px rgba(18,101,243,.42)}
 @media(min-width:1051px){.vehicle-image{width:106%;margin-left:-8%}.vehicle-art svg{width:106%;margin-left:-8%}}
 @media(min-width:1200px){
-  .contact-launcher{position:fixed;top:390px;right:max(300px,calc((100vw - 1450px)/2 + 264px));bottom:auto}.talk-button{border-radius:8px}
+  .contact-launcher{position:fixed;top:635px;right:max(24px,calc((100vw - 1450px)/2 + 18px));bottom:auto}.talk-button{border-radius:8px}
   .vehicle-sourcing{grid-template-columns:minmax(0,1.75fr) minmax(330px,.8fr) minmax(190px,.45fr);text-align:left;justify-items:stretch}
   .vehicle-sourcing .sourcing-copy{max-width:none;justify-self:start;text-align:left}.vehicle-sourcing h2{font-size:clamp(20px,1.65vw,28px);white-space:nowrap}.vehicle-sourcing .sourcing-types{justify-self:end;justify-content:flex-end}.vehicle-sourcing .sourcing-action{justify-self:end}
 }
 @media(max-width:1199px){.contact-drag-handle{display:none}}
+@media(min-width:1200px) and (max-height:800px){.contact-launcher{top:602px}}
