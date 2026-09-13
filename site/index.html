@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260914-1" />
+  <link rel="stylesheet" href="styles.css?v=20260914-2" />
 </head>
 <body>
   <header class="header">
@@ -129,15 +129,18 @@
     <div class="cart-summary"><div><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div><p>Delivery and taxes are calculated at checkout.</p><button class="primary wide" id="checkoutButton" disabled>Proceed to checkout</button></div>
   </aside>
 
-  <button class="talk-button" id="talkButton" aria-label="Talk to Nested Auto"><span>✦</span><b>Talk to us</b></button>
+  <div class="contact-launcher" aria-label="Contact Nested Auto">
+    <button class="talk-button" id="talkButton" aria-label="Open Nested Auto assistant"><span>✦</span><b>Talk to us</b></button>
+    <a class="whatsapp-direct" id="whatsappDirect" href="https://wa.me/8618215107127" target="_blank" rel="noopener" aria-label="Message Nested Auto directly on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4.2A11.4 11.4 0 0 0 6.1 21.3L4.6 27.8l6.6-1.7A11.4 11.4 0 1 0 16 4.2Z"/><path d="M12 10.2c-.3-.7-.7-.7-1-.7h-.8c-.3 0-.8.1-1.2.6-.4.5-1.6 1.6-1.6 3.8s1.6 4.4 1.8 4.7c.2.3 3.1 5 7.7 6.7 3.8 1.4 4.6 1.1 5.4 1 .8-.1 2.7-1.1 3-2.2.4-1.1.4-2 .3-2.2-.1-.2-.4-.3-.9-.6l-3.2-1.5c-.4-.2-.7-.3-1 .3-.3.5-1.2 1.5-1.5 1.8-.3.3-.6.4-1 .1-.5-.2-2-.7-3.7-2.3a14 14 0 0 1-2.6-3.2c-.3-.5 0-.7.2-1l.7-.8c.2-.3.3-.5.5-.8.1-.3.1-.6 0-.8Z"/></svg></a>
+  </div>
   <section class="chat-panel" id="chatPanel" aria-hidden="true" aria-label="Nested Auto parts assistant">
     <header class="chat-head"><div class="assistant-mark">N</div><div><strong>Nested Auto Assistant</strong><small>Parts & fitment support</small></div><button id="closeChat" aria-label="Close chat">×</button></header>
     <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
     <div class="chat-suggestions" id="chatSuggestions"></div>
-    <a class="whatsapp-option" id="whatsappOption" href="https://wa.me/8618215107127" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> Continue on WhatsApp</a>
+    <a class="whatsapp-option" id="whatsappOption" href="https://wa.me/8618215107127" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4.2A11.4 11.4 0 0 0 6.1 21.3L4.6 27.8l6.6-1.7A11.4 11.4 0 1 0 16 4.2Z"/><path d="M12 10.2c-.3-.7-.7-.7-1-.7h-.8c-.3 0-.8.1-1.2.6-.4.5-1.6 1.6-1.6 3.8s1.6 4.4 1.8 4.7c.2.3 3.1 5 7.7 6.7 3.8 1.4 4.6 1.1 5.4 1 .8-.1 2.7-1.1 3-2.2.4-1.1.4-2 .3-2.2-.1-.2-.4-.3-.9-.6l-3.2-1.5c-.4-.2-.7-.3-1 .3-.3.5-1.2 1.5-1.5 1.8-.3.3-.6.4-1 .1-.5-.2-2-.7-3.7-2.3a14 14 0 0 1-2.6-3.2c-.3-.5 0-.7.2-1l.7-.8c.2-.3.3-.5.5-.8.1-.3.1-.6 0-.8Z"/></svg> Continue on WhatsApp</a>
     <form class="chat-form" id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Ask about a part or vehicle…" aria-label="Message"><button aria-label="Send message">↑</button></form>
     <p class="chat-note">Always confirm fitment before ordering.</p>
   </section>
-  <script src="app.js?v=20260914-1"></script>
+  <script src="app.js?v=20260914-2"></script>
 </body>
 </html>
