@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260914-4" />
+  <link rel="stylesheet" href="styles.css?v=20260914-5" />
 </head>
 <body>
   <header class="header">
@@ -74,12 +74,6 @@
       <div><span>↗</span><p><strong>Fast delivery</strong>Get back on the road quickly.</p></div>
       <div><span>◌</span><p><strong>Expert support</strong>Specialists ready to help.</p></div>
     </section>
-    <div class="contact-row">
-      <div class="contact-launcher" aria-label="Contact Nested Auto">
-        <button class="talk-button" id="talkButton" aria-label="Open Nested Auto live assistant"><span>✦</span><b>Talk to us live</b></button>
-        <a class="whatsapp-direct" id="whatsappDirect" href="https://wa.me/8618215107127" target="_blank" rel="noopener" aria-label="Message Nested Auto directly on WhatsApp"><img src="assets/whatsapp-logo.png" alt="" aria-hidden="true"></a>
-      </div>
-    </div>
     </div>
     <section class="vehicle-sourcing" aria-labelledby="sourcingTitle">
       <div class="sourcing-copy"><p class="eyebrow">Cars, vans and buses on request</p><h2 id="sourcingTitle">Tell us the vehicle you need. We’ll source it.</h2><p>From family cars and commercial vans to pickups and buses such as the Toyota Coaster, Nested Auto can find vehicles to match your requirements and destination.</p></div>
@@ -137,6 +131,12 @@
     <div class="cart-summary"><div><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div><p>Delivery and taxes are calculated at checkout.</p><button class="primary wide" id="checkoutButton" disabled>Proceed to checkout</button></div>
   </aside>
 
+  <div class="contact-launcher" id="contactLauncher" aria-label="Contact Nested Auto">
+    <span class="contact-drag-handle" id="contactDragHandle" aria-label="Move contact control" role="button" tabindex="0">⠿</span>
+    <button class="talk-button" id="talkButton" aria-label="Open Nested Auto live assistant"><span>✦</span><b>Talk to us live</b></button>
+    <a class="whatsapp-direct" id="whatsappDirect" href="https://wa.me/8618215107127" target="_blank" rel="noopener" aria-label="Message Nested Auto directly on WhatsApp"><img src="assets/whatsapp-logo.png" alt="" aria-hidden="true"></a>
+  </div>
+
   <section class="chat-panel" id="chatPanel" aria-hidden="true" aria-label="Nested Auto parts assistant">
     <header class="chat-head"><div class="assistant-mark">N</div><div><strong>Nested Auto Assistant</strong><small>Parts & fitment support</small></div><button id="closeChat" aria-label="Close chat">×</button></header>
     <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
@@ -145,6 +145,6 @@
     <form class="chat-form" id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Ask about a part or vehicle…" aria-label="Message"><button aria-label="Send message">↑</button></form>
     <p class="chat-note">Always confirm fitment before ordering.</p>
   </section>
-  <script src="app.js?v=20260914-4"></script>
+  <script src="app.js?v=20260914-5"></script>
 </body>
 </html>
