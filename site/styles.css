@@ -63,6 +63,10 @@ html,body{max-width:100%;overflow-x:hidden}.hero>*,.detail-panel>*,.price-row>*,
 @media(max-width:700px){.nav{top:66px;right:10px;width:calc(100vw - 20px);max-height:calc(100dvh - 76px)}.mobile-menu-button{width:40px;height:40px;flex-basis:40px;padding:10px;order:2}.header-actions{order:3}.brand{order:1}.header{gap:6px}}
 @media(min-width:1200px){.mobile-menu-button,.mobile-nav-backdrop{display:none!important}}
 
+/* Keep currency centered in the breathing room between navigation and search. */
+@media(min-width:1200px){.header>.currency-picker{margin-left:auto}.header-actions{margin-left:0}}
+@media(max-width:1199px){.header>.currency-picker{order:3}.header-actions{order:4}}
+
 /* Functional About destination and contact options. */
 .about-dialog{width:min(620px,calc(100% - 30px))}.about-content{display:grid;gap:13px;margin-top:24px}.about-content>p{margin:0 0 5px;color:var(--muted);font-size:14px;line-height:1.65}.about-content>div{display:grid;gap:5px;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}.about-content strong{font-size:13px}.about-content span{color:var(--muted);font-size:12px;line-height:1.55}
 .whatsapp-option{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 14px;padding:10px 12px;border:1px solid #b9e5c8;border-radius:10px;background:#f2fbf5;color:#18723b;text-decoration:none;font-size:11px;font-weight:800}.whatsapp-option:hover,.whatsapp-option:focus-visible{border-color:#25a85a;background:#eaf8ef;outline:none}.chat-confirmation{align-self:stretch;padding:14px;border:1px solid #b9e5c8;border-radius:14px;background:#f2fbf5}.chat-confirmation strong{display:block;color:#185c33;font-size:13px}.chat-confirmation p{margin:7px 0 11px;color:#476454;font-size:11px;line-height:1.5}.chat-confirmation a{display:flex;align-items:center;justify-content:center;min-height:40px;padding:9px;border-radius:9px;background:#1f9d50;color:#fff;text-align:center;text-decoration:none;font-size:10px;font-weight:800}
