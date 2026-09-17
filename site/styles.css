@@ -58,14 +58,14 @@ html,body{max-width:100%;overflow-x:hidden}.hero>*,.detail-panel>*,.price-row>*,
 
 /* Reachable navigation at every supported viewport. */
 .mobile-menu-button,.mobile-nav-backdrop{display:none}.mobile-menu-button{width:44px;height:44px;border:1px solid var(--border);border-radius:11px;background:#fff;padding:11px;flex-direction:column;justify-content:center;gap:5px}.mobile-menu-button span{display:block;width:100%;height:2px;border-radius:2px;background:var(--navy);transition:transform .2s,opacity .2s}.mobile-menu-button[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}.mobile-menu-button[aria-expanded="true"] span:nth-child(2){opacity:0}.mobile-menu-button[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-@media(max-width:1199px){.header{position:sticky;top:0;z-index:50}.mobile-menu-button{display:flex;margin-left:auto;flex:0 0 44px}.header-actions{margin-left:0}.nav{display:flex;position:fixed;z-index:51;top:82px;right:18px;width:min(330px,calc(100vw - 36px));height:auto;max-height:calc(100dvh - 100px);overflow:auto;flex-direction:column;align-items:stretch;gap:0;padding:10px;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:0 24px 60px rgba(17,26,43,.2);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-10px);transition:opacity .2s,transform .2s,visibility .2s}.nav.open{opacity:1;visibility:visible;pointer-events:auto;transform:none}.nav button{height:auto;min-height:48px;width:100%;padding:0 15px;border-radius:10px;text-align:left}.nav button:hover,.nav button:focus-visible{background:var(--bg);outline:none}.nav .active:after{top:10px;bottom:10px;left:2px;right:auto;width:3px;height:auto;border-radius:4px}.mobile-nav-backdrop.open{display:block;position:fixed;inset:0;z-index:49;border:0;background:rgba(17,26,43,.22)}body.mobile-menu-open{overflow:hidden}}
+@media(max-width:1499px){.header{position:sticky;top:0;z-index:50}.mobile-menu-button{display:flex;margin-left:auto;flex:0 0 44px}.header-actions{margin-left:0}.nav{display:flex;position:fixed;z-index:51;top:82px;right:18px;width:min(330px,calc(100vw - 36px));height:auto;max-height:calc(100dvh - 100px);overflow:auto;flex-direction:column;align-items:stretch;gap:0;padding:10px;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:0 24px 60px rgba(17,26,43,.2);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-10px);transition:opacity .2s,transform .2s,visibility .2s}.nav.open{opacity:1;visibility:visible;pointer-events:auto;transform:none}.nav button{height:auto;min-height:48px;width:100%;padding:0 15px;border-radius:10px;text-align:left}.nav button:hover,.nav button:focus-visible{background:var(--bg);outline:none}.nav .active:after{top:10px;bottom:10px;left:2px;right:auto;width:3px;height:auto;border-radius:4px}.mobile-nav-backdrop.open{display:block;position:fixed;inset:0;z-index:49;border:0;background:rgba(17,26,43,.22)}body.mobile-menu-open{overflow:hidden}}
 @media(min-width:701px) and (max-width:1050px){.nav{top:76px}}
 @media(max-width:700px){.nav{top:66px;right:10px;width:calc(100vw - 20px);max-height:calc(100dvh - 76px)}.mobile-menu-button{width:40px;height:40px;flex-basis:40px;padding:10px;order:2}.header-actions{order:3}.brand{order:1}.header{gap:6px}}
-@media(min-width:1200px){.mobile-menu-button,.mobile-nav-backdrop{display:none!important}}
+@media(min-width:1500px){.mobile-menu-button,.mobile-nav-backdrop{display:none!important}}
 
 /* Keep currency centered in the breathing room between navigation and search. */
-@media(min-width:1200px){.header>.currency-picker{margin-left:auto}.header-actions{margin-left:0}}
-@media(max-width:1199px){.header>.currency-picker{order:3}.header-actions{order:4}}
+@media(min-width:1500px){.header>.currency-picker{margin-left:auto}.header-actions{margin-left:0}}
+@media(max-width:1499px){.header>.currency-picker{order:3}.header-actions{order:4}}
 
 /* Functional About destination and contact options. */
 .about-dialog{width:min(620px,calc(100% - 30px))}.about-content{display:grid;gap:13px;margin-top:24px}.about-content>p{margin:0 0 5px;color:var(--muted);font-size:14px;line-height:1.65}.about-content>div{display:grid;gap:5px;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}.about-content strong{font-size:13px}.about-content span{color:var(--muted);font-size:12px;line-height:1.55}
@@ -99,3 +99,21 @@ html,body{max-width:100%;overflow-x:hidden}.hero>*,.detail-panel>*,.price-row>*,
 }
 @media(max-width:1199px){.contact-drag-handle{display:none}}
 @media(min-width:1200px) and (max-height:800px){.contact-launcher{top:602px}}
+
+/* A 13-inch laptop has desktop width but substantially less vertical room. */
+@media(min-width:1051px) and (max-height:960px){
+  .hero-fold{min-height:0}
+  .hero-fold .hero{flex:0 0 auto;min-height:0;padding-top:18px;padding-bottom:4px}
+  .vehicle-stage{width:100%;max-width:630px;justify-self:center}
+  .vehicle-identity,.detail-panel{min-height:340px}
+  .detail-panel{padding:21px 22px 18px}
+  .detail-panel h2{margin:10px 0 12px}
+  .detail-panel .subcats{gap:11px;margin-bottom:12px}
+  .price-row{padding-top:12px}.price{margin:4px 0 10px}
+  .vehicle-identity h1{margin-bottom:18px}
+  .category-wrap{margin-top:4px}
+  .categories{padding-block:7px}
+  .category{height:94px}.category .cat-icon{font-size:32px;margin-bottom:5px}
+  .hero-fold .benefits{margin-top:10px;padding-block:12px}
+  .contact-launcher{top:510px;bottom:auto}
+}
